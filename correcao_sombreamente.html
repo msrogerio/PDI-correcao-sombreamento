@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Projeto 02</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+  TeX: { equationNumbers: { autoNumber: 'all' } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+body > * {
+  max-width: 42em;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  padding-left: 7.5em;
+  padding-right: 7.5em;
+}
+pre, code {
+  max-width: 50em;
+  font-family: monospace;
+}
+pre.oct-code {
+  border: 1px solid Grey;
+  padding: 5px;
+}
+pre.oct-code-output {
+  margin-left: 2em;
+}
+span.comment {
+  color: ForestGreen;
+}
+span.keyword {
+  color: Blue;
+}
+span.string {
+  color: DarkOrchid;
+}
+footer {
+  margin-top: 2em;
+  font-size: 80%;
+}
+a, a:visited {
+  color: Blue;
+}
+h2 {
+  font-family: "Roboto Condensed", serif;
+  margin-top: 1.5em;
+}
+h2 a, h2 a:visited {
+  color: Black;
+}
+</style>
+
+</head>
+<body>
+<h1>Projeto 02</h1>
+
+<p>Autor: Marlon da Silva Rogério</p>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#node1">Referências</a></li>
+<li><a href="#node2">Parte 02</a></li>
+</ul>
+<h2><a id="node1">Referências</a></h2>
+<p>GONZALEZ, R. C., WOODS, R. E. Processamento de Imagens Digitais. Editora Edgard Blucher, ISBN  São Paulo, 2000.
+Support MathWorks, 2021. Disponível em: <a href="https://www.mathworks.com/help/">https://www.mathworks.com/help/</a>. Acesso  em: 25 de abr. de 2021.</p>
+<h2><a id="node2">Parte 02</a></h2>
+<p>(2) Defina a correção de sombreamento de uma imagem.
+Aplique a correção de sombreamento de uma imagem
+Imagem: tungsten_filament_shaded.tif; padrão: tungsten_sensor_shading.tif</p>
+
+<pre class="oct-code">clc; close all; clear
+
+img_filamento = imread(<span class="string">'tungsten_filament_shaded.bmp'</span>);
+imshow(img_filamento)
+img_correcao = imread(<span class="string">'tungsten_sensor_shading.bmp'</span>);
+figure
+imshow(img_correcao)
+img_corrigida = double(img_filamento)./ double(img_correcao);
+figure
+imshow(img_corrigida)</pre>
+<img src="correcao_sombreamente-1.png" alt="correcao_sombreamente-1.png"><img src="correcao_sombreamente-2.png" alt="correcao_sombreamente-2.png"><img src="correcao_sombreamente-3.png" alt="correcao_sombreamente-3.png">
+<footer>
+<hr>
+<a href="https://www.octave.org">Published with GNU Octave 6.2.0</a>
+</footer>
+<!--
+##### SOURCE BEGIN #####
+%% Projeto 02
+% Autor: Marlon da Silva Rogério
+
+%% Referências
+% GONZALEZ, R. C., WOODS, R. E. Processamento de Imagens Digitais. Editora Edgard Blucher, ISBN  São Paulo, 2000.
+% Support MathWorks, 2021. Disponível em: <https://www.mathworks.com/help/>. Acesso  em: 25 de abr. de 2021.
+
+%% Parte 02
+% (2) Defina a correção de sombreamento de uma imagem.
+% Aplique a correção de sombreamento de uma imagem
+% Imagem: tungsten_filament_shaded.tif; padrão: tungsten_sensor_shading.tif
+
+clc; close all; clear
+
+img_filamento = imread('tungsten_filament_shaded.bmp');
+imshow(img_filamento)
+img_correcao = imread('tungsten_sensor_shading.bmp');
+figure
+imshow(img_correcao)
+img_corrigida = double(img_filamento)./ double(img_correcao);
+figure
+imshow(img_corrigida)
+##### SOURCE END #####
+-->
+</body>
+</html>
